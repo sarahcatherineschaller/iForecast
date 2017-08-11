@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+WeatherForecast::CLI.new.call
