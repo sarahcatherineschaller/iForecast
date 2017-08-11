@@ -1,12 +1,13 @@
 class WeatherForecast::CLI
 
 	def call 
-		puts "Choose a number to see the current weather forecast:"
 		list_cities
 	end
 
 	def list_cities 
-		puts <<-DOC 
+		puts "Choose a number to see the current weather forecast:"
+		#here doc's are like giant strings"
+		puts <<-DOC.gsub /^\s*/, ''
 			1.  New York, NY
 			2. Boston, MA
 			3. San Francisco, CA
