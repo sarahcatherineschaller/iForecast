@@ -1,5 +1,2 @@
-require "weather_forecast/version"
-
-module WeatherForecast
-  # Your code goes here...
-end
+require_relative "weather_forecast/version"
+require_relative "weather_forecast/cli"
