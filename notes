@@ -1,0 +1,54 @@
+how me the weather in….  
+
+1.  New York, NY
+2. Boston, MA
+3. San Francisco, CA
+4. Austin, TX 
+5. Seattle, WA
+6. Orlando, FL
+7. Phoenix, AZ
+8. Washington, D.C.
+9. Denver, CO
+10. Hartford, CT
+
+1
+
+Do you want to know the weather:
+1. Right now
+2. Hourly
+3. 5 Day Forecast
+
+1
+
+Right now it is 67 degrees F, with humidity at 89% and 7.0 miles of visibility.
+
+Do you want to go back to the list of cities? Y or N
+
+N
+
+Goodbye!
+exit
+
+
+FOR HOURLY:
+6:00pm: Showers, 67 degrees F
+7:00pm: Few Showers, 67 degrees F
+8:00pm: Cloudy, 68 degrees F
+9:00pm: Cloudy, 69 degrees F
+(and so on for the next 8 hours)
+
+
+FOR 5 DAY FORECAST:
+Tuesday:        Cloudy   —   High/Low  82/64   —   Precip  10%
+Wednesday:   Sunny   —   High/Low  84/68   —   Precip  0%
+Thursday:       Partly Cloudy   —   High/Low  82/68   —   Precip  0%
+Friday:            PM Rain   —   High/Low  78/69   —   Precip  60%
+Saturday:       Cloudy   —   High/Low  82/70   —   Precip  20% 
+
+
+What is a weather forecast'?
+
+A forecast has a city
+A forecast has a temperature
+A forecast has humidity
+A forecast has visibility
