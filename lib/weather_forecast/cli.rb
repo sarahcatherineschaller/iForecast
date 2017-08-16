@@ -2,7 +2,6 @@ class WeatherForecast::CLI
 
 	def call 
 		list_cities
-		choose_city
 	end
 
 	def list_cities 
@@ -20,6 +19,7 @@ class WeatherForecast::CLI
 			9. Denver, CO
 			10. Hartford, CT
 		DOC
+		choose_city
 	end
 
 	def choose_city
@@ -60,18 +60,21 @@ class WeatherForecast::CLI
 			puts "Friday:      PM Rain   —   High/Low  78/69   —   Precip  60%"
 			puts "Saturday:    Cloudy   —   High/Low  82/70   —   Precip  20%"
 		end
-		# puts "Enter 'forecast list' to go back, 'cities' to see the list of cities, or 'exit'"
-		# input = gets.strip.downcase 
-		# until input == "forecast list" || input == "cities" || input == "exit"
-		# 	puts "Please enter your choice again"
-		# case input
-		# when "forecast_list"
-		# 	forecast_list
-		# when "cities"
-		# 	list_cities
-		# when "exit"
-		# 	puts "Goodbye!"
-		# end
+		puts start_over
+	end
+
+	def start_over 
+		puts "Enter 'cities' to see the list of cities again, or 'exit'"
+        input = gets.strip.downcase 
+		until input == "cities" || input == "exit"
+			puts "Please enter your choice again"
+		end
+		case input
+		when "cities"
+			list_cities
+		when "exit"
+			puts "Goodbye!"
+		end
 	end
 
 
