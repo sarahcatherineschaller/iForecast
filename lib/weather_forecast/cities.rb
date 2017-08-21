@@ -1,4 +1,5 @@
 class WeatherForecast::Cities
+	attr_accessor :name, :temperature, :humidity, :forecast, :url
 
 	def self.today
 		puts "Choose a city to see the current weather forecast:"
