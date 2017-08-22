@@ -1,0 +1,4 @@
+class WeatherForecast::Scraper
+
+
+end
