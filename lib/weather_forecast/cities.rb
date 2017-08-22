@@ -6,6 +6,10 @@ class WeatherForecast::Cities
     @@all = []
 
     def self.today
+    	self.scrape_cities
+    end
+
+    def scrape_cities
     	city_1 = self.new
     	city_1.name = "New York, NY"
     	city_1.temperature = "67 degrees F"
@@ -24,8 +28,6 @@ class WeatherForecast::Cities
 
     	[city_1, city_2]
     end
-
-
 
     def self.all 
     	@@all 
