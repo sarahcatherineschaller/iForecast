@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/weather_forecast'
+require "bundler/setup"
+require "weather_forecast"
 
 WeatherForecast::CLI.new.call

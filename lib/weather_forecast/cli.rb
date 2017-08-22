@@ -25,10 +25,13 @@ class WeatherForecast::CLI
 		 	10. Hartford, CT
 		DOC
 		input = gets.strip
+		@cities = WeatherForecast::Cities.today
+		@the_city = @cities[input.to_i-1]
 		until input.to_i > 0 && input.to_i < 11
 			puts "Please enter a number 1-10"
 			input = gets.strip
 		end
+
 		forecast_type
     end
 
@@ -44,19 +47,22 @@ class WeatherForecast::CLI
 	end
 
 	def forecast_choice
+        # @cities.each.with_index(1) do |city, index|
+        # 	puts "#{index}. #{city.forecast}"
+        # end
 		input = gets.strip
         until input.to_i > 0 && input.to_i < 5
         	puts "Please enter a number 1-4"
         	input = gets.strip
         end
 		if input == "1"
-			puts "Mostly Cloudy"
+			puts "#{@the_city.forecast}"
 		elsif input == "2"
-			puts "It is currently 67 degrees F in New York, NY"
+			puts "It is currently #{@the_city.temperature} in #{@the_city.name}"
 		elsif input == "3"
-			puts "7.0 miles"
+			puts "#{@the_city.visibility}"
 		elsif input == "4"
-			puts "43 percent humidity"
+			puts "#{@the_city.humidity}"
 		end
 		start_over
 	end
