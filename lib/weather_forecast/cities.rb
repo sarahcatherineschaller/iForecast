@@ -45,8 +45,11 @@ class WeatherForecast::Cities
         #humidity = doc.css(".wx-detail-value")[1].text
         #sunrise = doc.css("#dp0-details-sunrise").text
         #sunset = doc.css("#dp0-details-sunset").text
+    end
 
-    	binding.pry
+    def self.scrape_boston
+        doc = Nokogiri::HTML(open("https://weather.com/weather/today/l/USMA0046:1:US"))
+        binding.pry
     end
 
 
