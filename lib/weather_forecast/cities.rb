@@ -35,8 +35,8 @@ class WeatherForecast::Cities
     	# [city_1, city_2]
     end
 
-    def self.scrape_newyork
-    	doc = Nokogiri::HTML(open("https://weather.com/weather/today/l/USNY0996:1:US"))
+    def self.scrape_city(url)
+    	doc = Nokogiri::HTML(open("url"))
         #forecast = doc.css(".today_nowcard-phrase").text
         #temperature = doc.css(".today_nowcard-temp").text
         #feels like = doc.css(".today_nowcard-feels").text
@@ -47,10 +47,6 @@ class WeatherForecast::Cities
         #sunset = doc.css("#dp0-details-sunset").text
     end
 
-    def self.scrape_boston
-        doc = Nokogiri::HTML(open("https://weather.com/weather/today/l/USMA0046:1:US"))
-        binding.pry
-    end
 
 
     def self.all 
