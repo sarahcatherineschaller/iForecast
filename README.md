@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run weather-forecast after installing the gem.
 
 ## Development
 
