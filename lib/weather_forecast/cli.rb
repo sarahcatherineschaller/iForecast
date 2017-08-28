@@ -24,16 +24,25 @@ class WeatherForecast::CLI
 			9. Denver, CO
 		 	10. Hartford, CT
 		DOC
-		input = gets.strip
+		city_url
+    end
+
+    def city_url
+        input = gets.strip
 		@cities = WeatherForecast::Cities.today
 		@the_city = @cities[input.to_i-1]
 		until input.to_i > 0 && input.to_i < 11
 			puts "Please enter a number 1-10"
 			input = gets.strip
 		end
+		if input == "1"
+			WeatherForecast::Cities.scrape_city("https://weather.com/weather/today/l/USNY0996:1:US")
+		elsif input == "2"
+			WeatherForecast::Cities.scrape_city("https://weather.com/weather/today/l/USMA0046:1:US")
+		end
 
 		forecast_type
-    end
+	end
 
     def forecast_type
     	puts "Choose a number to see the current forecast:"

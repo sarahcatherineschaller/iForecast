@@ -10,6 +10,3 @@ Phoenix, AZ: https://weather.com/weather/today/l/USAZ0166:1:US
 Washington, D.C.: https://weather.com/weather/today/l/USDC0001:1:US
 Denver, CO: https://weather.com/weather/today/l/USCO0105:1:US
 Hartford, CT: https://weather.com/weather/today/l/USCT0094:1:US
-
-When choosing a city from first list, each city has its own URL, scraper method takes in URL as an argument - only one scraper method instead of scraping each individual city's weather site
-
