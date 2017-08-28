@@ -4,8 +4,6 @@ require 'pry'
 class WeatherForecast::Cities
 	attr_accessor :name, :temperature, :humidity, :visibility, :forecast, :url
 
-    @@all = []
-
     def self.today
     	self.scrape_cities
     end
@@ -30,20 +28,5 @@ class WeatherForecast::Cities
         sunrise = doc.css("#dp0-details-sunrise").text
         sunset = doc.css("#dp0-details-sunset").text
     end
-
-
-
-    def self.all 
-    	@@all 
-    end
-
-    def save 
-    	@@all << self 
-    end
-
-    def self.clear_all
-    	@@all.clear 
-    end
-
 
 end

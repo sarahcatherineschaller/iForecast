@@ -1,13 +1,15 @@
 class WeatherForecast::CLI
 
+	def initialize(url)
+		@url = url
+		WeatherForecast::Cities.scrape_city(url)
+
 	def call 
 		list_cities
 	end
 
 	def list_cities 
-
 		puts "Choose a city to see the current weather forecast:"
-		WeatherForecast::Cities.clear_all 
 		city_menu
 	end
 
@@ -36,7 +38,7 @@ class WeatherForecast::CLI
 			input = gets.strip
 		end
 		if input == "1"
-			WeatherForecast::Cities.scrape_city("https://weather.com/weather/today/l/USNY0996:1:US")
+			self.new("https://weather.com/weather/today/l/USNY0996:1:US")
 		elsif input == "2"
 			WeatherForecast::Cities.scrape_city("https://weather.com/weather/today/l/USMA0046:1:US")
 		end
