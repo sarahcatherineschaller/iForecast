@@ -3,6 +3,7 @@ class WeatherForecast::CLI
 	def initialize(url)
 		@url = url
 		WeatherForecast::Cities.scrape_city(url)
+	end
 
 	def call 
 		list_cities
@@ -40,7 +41,7 @@ class WeatherForecast::CLI
 		if input == "1"
 			self.new("https://weather.com/weather/today/l/USNY0996:1:US")
 		elsif input == "2"
-			WeatherForecast::Cities.scrape_city("https://weather.com/weather/today/l/USMA0046:1:US")
+			self.new("https://weather.com/weather/today/l/USMA0046:1:US")
 		end
 
 		forecast_type
