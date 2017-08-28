@@ -1,10 +1,5 @@
 class WeatherForecast::CLI
 
-	def initialize(url)
-		@url = url
-		WeatherForecast::Cities.scrape_city(url)
-	end
-
 	def call 
 		list_cities
 	end
@@ -39,9 +34,9 @@ class WeatherForecast::CLI
 			input = gets.strip
 		end
 		if input == "1"
-			self.new("https://weather.com/weather/today/l/USNY0996:1:US")
+			WeatherForecast::Cities.scrape_newyork
 		elsif input == "2"
-			self.new("https://weather.com/weather/today/l/USMA0046:1:US")
+			WeatherForecast::Cities.scrape_boston
 		end
 
 		forecast_type
@@ -52,30 +47,31 @@ class WeatherForecast::CLI
     	puts <<~DOC
     	    1. Forecast
     	    2. Temperature
-    	    3. Visibility
+    	    3. High/Low
     	    4. Humidity
+    	    5. Sunrise/Sunset
         DOC
         forecast_choice
 	end
 
 	def forecast_choice
-        # @cities.each.with_index(1) do |city, index|
-        # 	puts "#{index}. #{city.forecast}"
-        # end
 		input = gets.strip
-        until input.to_i > 0 && input.to_i < 5
-        	puts "Please enter a number 1-4"
+        until input.to_i > 0 && input.to_i < 7
+        	puts "Please enter a number 1-6"
         	input = gets.strip
         end
 		if input == "1"
-			puts "#{@the_city.forecast}"
+			puts "Today it will be #{@the_city.forecast}"
 		elsif input == "2"
-			puts "It is currently #{@the_city.temperature} in #{@the_city.name}"
+			puts "It is currently #{@the_city.temperature}, and feels like #{@the_city.feels_like}"
 		elsif input == "3"
-			puts "#{@the_city.visibility}"
+			puts "High: #{@the_city.high}, Low: #{@the_city.low}"
 		elsif input == "4"
-			puts "#{@the_city.humidity}"
+			puts "The humidity is #{@the_city.humidity}"
+		elsif input == "5"
+			puts "Sunrise: #{@the_city.sunrise}, Sunset: #{@the_city.sunset}"
 		end
+
 		start_over
 	end
 
