@@ -114,7 +114,7 @@ class WeatherForecast::CLI
 	def start_over 
 		puts " "
 		puts "Enter 'back' to go back to the list of forecast choices,"
-		puts "enter cities' to see the list of cities, or 'exit'"
+		puts "enter 'cities' to see the list of cities, or 'exit'"
 		puts " "
 
         input = gets.strip.downcase 
