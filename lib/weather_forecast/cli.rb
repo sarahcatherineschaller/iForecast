@@ -61,13 +61,13 @@ class WeatherForecast::CLI
         	input = gets.strip
         end
 		if input == "1"
-			puts "Today it will be #{@the_city.forecast}"
+			puts "It is currently #{@the_city.forecast}."
 		elsif input == "2"
-			puts "It is currently #{@the_city.temperature}, and feels like #{@the_city.feels_like}"
+			puts "It is currently #{@the_city.temperature}, and #{@the_city.feels_like}."
 		elsif input == "3"
 			puts "High: #{@the_city.high}, Low: #{@the_city.low}"
 		elsif input == "4"
-			puts "The humidity is #{@the_city.humidity}"
+			puts "The humidity is #{@the_city.humidity}."
 		elsif input == "5"
 			puts "Sunrise: #{@the_city.sunrise}, Sunset: #{@the_city.sunset}"
 		end
@@ -77,12 +77,14 @@ class WeatherForecast::CLI
 
 
 	def start_over 
-		puts "Enter 'cities' to see the list of cities again, or 'exit'"
+		puts "Enter 'back' to go back to the list of forecast choices, enter cities' to see the list of cities, or 'exit'"
         input = gets.strip.downcase 
-		until input == "cities" || input == "exit"
+		until input == "back" || input == "cities" || input == "exit"
 			puts "Please enter your choice again"
 		end
 		case input
+		when "back"
+			forecast_type
 		when "cities"
 			list_cities
 		when "exit"
