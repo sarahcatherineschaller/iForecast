@@ -5,7 +5,10 @@ class WeatherForecast::CLI
 	end
 
 	def list_cities 
+		puts " "
 		puts "Choose a city to see the current weather forecast:"
+		puts " "
+
 		city_menu
 	end
 
@@ -22,28 +25,51 @@ class WeatherForecast::CLI
 			9. Denver, CO
 		 	10. Hartford, CT
 		DOC
+		puts " "
+
 		city_url
     end
 
     def city_url
         input = gets.strip
+
 		@cities = WeatherForecast::Cities.today
 		@the_city = @cities[input.to_i-1]
+
 		until input.to_i > 0 && input.to_i < 11
 			puts "Please enter a number 1-10"
 			input = gets.strip
 		end
+
 		if input == "1"
 			WeatherForecast::Cities.scrape_newyork
 		elsif input == "2"
 			WeatherForecast::Cities.scrape_boston
+		elsif input == "3"
+			WeatherForecast::Cities.scrape_sanfran
+		elsif input == "4"
+			WeatherForecast::Cities.scrape_austin
+		elsif input == "5"
+			WeatherForecast::Cities.scrape_seattle
+		elsif input == "6"
+			WeatherForecast::Cities.scrape_orlando
+		elsif input == "7"
+			WeatherForecast::Cities.scrape_phoenix
+		elsif input == "8"
+			WeatherForecast::Cities.scrape_dc
+		elsif input == "9"
+			WeatherForecast::Cities.scrape_denver
+		elsif input == "10"
+			WeatherForecast::Cities.scrape_hartford
 		end
 
 		forecast_type
 	end
 
     def forecast_type
+    	puts " "
     	puts "Choose a number to see the current forecast:"
+    	puts " "
     	puts <<~DOC
     	    1. Forecast
     	    2. Temperature
@@ -51,24 +77,33 @@ class WeatherForecast::CLI
     	    4. Humidity
     	    5. Sunrise/Sunset
         DOC
+        puts " "
+
         forecast_choice
 	end
 
 	def forecast_choice
 		input = gets.strip
-        until input.to_i > 0 && input.to_i < 7
-        	puts "Please enter a number 1-6"
+
+        until input.to_i > 0 && input.to_i < 6
+        	puts "Please enter a number 1-5"
         	input = gets.strip
         end
+
 		if input == "1"
-			puts "It is currently #{@the_city.forecast}."
+			puts " "
+			puts "The weather is currently #{@the_city.forecast}."
 		elsif input == "2"
-			puts "It is currently #{@the_city.temperature}, and #{@the_city.feels_like}."
+			puts " "
+			puts "It is currently #{@the_city.temperature} F, and #{@the_city.feels_like} F."
 		elsif input == "3"
+			puts " "
 			puts "High: #{@the_city.high}, Low: #{@the_city.low}"
 		elsif input == "4"
+			puts " "
 			puts "The humidity is #{@the_city.humidity}."
 		elsif input == "5"
+			puts " "
 			puts "Sunrise: #{@the_city.sunrise}, Sunset: #{@the_city.sunset}"
 		end
 
@@ -77,21 +112,28 @@ class WeatherForecast::CLI
 
 
 	def start_over 
-		puts "Enter 'back' to go back to the list of forecast choices, enter cities' to see the list of cities, or 'exit'"
+		puts " "
+		puts "Enter 'back' to go back to the list of forecast choices,"
+		puts "enter cities' to see the list of cities, or 'exit'"
+		puts " "
+
         input = gets.strip.downcase 
+
 		until input == "back" || input == "cities" || input == "exit"
 			puts "Please enter your choice again"
+			input = gets.strip.downcase
 		end
+
 		case input
 		when "back"
 			forecast_type
 		when "cities"
 			list_cities
 		when "exit"
+			puts " "
 			puts "Goodbye!"
+			puts " "
 		end
 	end
-
-
 
 end

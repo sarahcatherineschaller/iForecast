@@ -1,6 +1,3 @@
-
-require 'pry'
-
 class WeatherForecast::Cities
 	attr_accessor :forecast, :temperature, :feels_like, :high, :low, :humidity, :sunrise, :sunset, :doc
 
@@ -24,17 +21,6 @@ class WeatherForecast::Cities
 
     	cities
     end
-
-# New York, NY: https://weather.com/weather/today/l/USNY0996:1:US
-# Boston, MA: https://weather.com/weather/today/l/USMA0046:1:US
-# San Francisco, CA: https://weather.com/weather/today/l/USCA0987:1:US
-# Austin, TX: https://weather.com/weather/today/l/USTX0057:1:US
-# Seattle, WA: https://weather.com/weather/today/l/USWA0395:1:US
-# Orlando, FL: https://weather.com/weather/today/l/USFL0372:1:US
-# Phoenix, AZ: https://weather.com/weather/today/l/USAZ0166:1:US
-# Washington, D.C.: https://weather.com/weather/today/l/USDC0001:1:US
-# Denver, CO: https://weather.com/weather/today/l/USCO0105:1:US
-# Hartford, CT: https://weather.com/weather/today/l/USCT0094:1:US
 
     def self.scrape_newyork
     	@doc = Nokogiri::HTML(open("https://weather.com/weather/today/l/USNY0996:1:US"))
@@ -100,7 +86,5 @@ class WeatherForecast::Cities
 
         city
     end
-
-
 
 end
