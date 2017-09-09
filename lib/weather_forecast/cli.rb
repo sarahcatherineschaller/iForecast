@@ -1,6 +1,7 @@
 class WeatherForecast::CLI
 
 	def call 
+		WeatherForecast::Scraper.today
 		list_cities
 	end
 
@@ -33,35 +34,34 @@ class WeatherForecast::CLI
     def city_url
         input = gets.strip
 
-		@cities = WeatherForecast::Cities.today
-		@the_city = @cities[input.to_i-1]
+		@the_city = WeatherForecast::Cities.all[input.to_i-1]
 
 		until input.to_i > 0 && input.to_i < 11
 			puts "Please enter a number 1-10"
 			input = gets.strip
 		end
 
-		if input == "1"
-			WeatherForecast::Cities.scrape_newyork
-		elsif input == "2"
-			WeatherForecast::Cities.scrape_boston
-		elsif input == "3"
-			WeatherForecast::Cities.scrape_sanfran
-		elsif input == "4"
-			WeatherForecast::Cities.scrape_austin
-		elsif input == "5"
-			WeatherForecast::Cities.scrape_seattle
-		elsif input == "6"
-			WeatherForecast::Cities.scrape_orlando
-		elsif input == "7"
-			WeatherForecast::Cities.scrape_phoenix
-		elsif input == "8"
-			WeatherForecast::Cities.scrape_dc
-		elsif input == "9"
-			WeatherForecast::Cities.scrape_denver
-		elsif input == "10"
-			WeatherForecast::Cities.scrape_hartford
-		end
+		# if input == "1"
+		# 	WeatherForecast::Scraper.scrape_newyork
+		# elsif input == "2"
+		# 	WeatherForecast::Scraper.scrape_boston
+		# elsif input == "3"
+		# 	WeatherForecast::Scraper.scrape_sanfran
+		# elsif input == "4"
+		# 	WeatherForecast::Scraper.scrape_austin
+		# elsif input == "5"
+		# 	WeatherForecast::Scraper.scrape_seattle
+		# elsif input == "6"
+		# 	WeatherForecast::Scraper.scrape_orlando
+		# elsif input == "7"
+		# 	WeatherForecast::Scraper.scrape_phoenix
+		# elsif input == "8"
+		# 	WeatherForecast::Scraper.scrape_dc
+		# elsif input == "9"
+		# 	WeatherForecast::Scraper.scrape_denver
+		# elsif input == "10"
+		# 	WeatherForecast::Scraper.scrape_hartford
+		# end
 
 		forecast_type
 	end
