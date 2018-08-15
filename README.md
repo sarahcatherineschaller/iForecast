@@ -1,13 +1,13 @@
-# WeatherForecast
+# iForecast
 
-A Gem for finding the weather forecast for 10 cities across the US!
+A Ruby Gem for finding the weather forecast for 10 cities across the US!
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'weather_forecast'
+gem 'iforecast'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install weather_forecast
+    $ gem install iforecast
 
 ## Usage
 
-Run weather-forecast after installing the gem.
+Run iforecast after installing the gem.
 
 ## Development
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sarahschaller/weather_forecast. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sarahcatherineschaller/iforecast. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -38,4 +38,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Code of Conduct
 
-Everyone interacting in the WeatherForecast project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/sarahschaller/weather_forecast/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the WeatherForecast project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
